@@ -17,7 +17,7 @@ export function ContactSection() {
   if (!mounted) return null;
 
   return (
-    <section id="contact" className="py-20 bg-muted/50">
+    <section id="contact" className="py-20 bg-muted/50 px-5">
       <div className="   container max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>

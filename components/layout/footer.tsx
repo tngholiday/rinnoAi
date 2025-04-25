@@ -11,8 +11,8 @@ export function Footer() {
   
   const logoSrc = resolvedTheme === "dark" ? "/images/logo-dark.png" : "/images/logo.png";
   return (
-    <footer className="bg-muted py-12">
-      <div className="   container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-muted py-12 px-5">
+      <div className="container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center space-x-2 mb-4">
           <Link href="/" className="flex items-center space-x-2">

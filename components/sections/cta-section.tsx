@@ -15,7 +15,7 @@ export function CtaSection() {
   if (!mounted) return null;
 
   return (
-    <section className="py-20">
+    <section className="py-20 px-5">
       <div className="   container max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

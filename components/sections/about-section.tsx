@@ -16,7 +16,7 @@ export function AboutSection() {
   if (!mounted) return null;
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 px-5">
       <div className="   container max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div

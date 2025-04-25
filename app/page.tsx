@@ -21,12 +21,12 @@ export default function Home() {
     { icon: SiGraphql, name: "GraphQL" },
   ];
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
      
       <HeroSection />
       <ServicesSection />
       <AboutSection />
-      <section className="py-16 overflow-hidden container mx-auto max-w-7xl">
+      <section className="py-16 overflow-hidden container mx-auto max-w-7xl px-5">
       <h2 className="text-3xl font-bold mb-8 text-foreground pb-10">Technologies We Use</h2>
 
       <div className="relative w-full overflow-hidden">

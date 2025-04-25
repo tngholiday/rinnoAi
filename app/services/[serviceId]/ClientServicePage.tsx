@@ -57,7 +57,7 @@ export default function ClientServicePage({ service }: ClientServicePageProps) {
         <section>
   <h2 className="text-3xl font-bold mb-10">Our Services</h2>
 
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
   {service.services.map((item: string, index: number) => {
     const imageUrl = serviceImages[index % serviceImages.length];
     const serviceSlug = item.toLowerCase().replace(/\s+/g, "-"); // basic slug
