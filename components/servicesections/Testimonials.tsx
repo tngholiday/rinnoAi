@@ -18,14 +18,14 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
+    <section id="testimonials" ref={sectionRef} className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-zinc-800 dark:to-zinc-900 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block bg-blue-100 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
+            className="inline-block bg-blue-100 dark:bg-zinc-900 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
           >
             Testimonials
           </motion.span>
@@ -33,7 +33,7 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
           >
             What Our Clients Say
           </motion.h2>
@@ -41,7 +41,7 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-600 text-lg"
+            className="text-gray-600 dark:text-gray-400 text-lg"
           >
             Discover how our IT solutions have helped businesses across various industries achieve their goals.
           </motion.p>
@@ -52,14 +52,14 @@ const Testimonials: React.FC = () => {
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 flex justify-between w-full">
             <button
               onClick={prevTestimonial}
-              className="bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-blue-600 focus:outline-none transition transform hover:-translate-y-0.5"
+              className="bg-white dark:bg-zinc-900 p-3 rounded-full shadow-md text-gray-700 dark:text-gray-300 hover:text-blue-600 focus:outline-none transition transform hover:-translate-y-0.5"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={nextTestimonial}
-              className="bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-blue-600 focus:outline-none transition transform hover:-translate-y-0.5"
+              className="bg-white dark:bg-zinc-900 p-3 rounded-full shadow-md text-gray-700 dark:text-gray-300 hover:text-blue-600 focus:outline-none transition transform hover:-translate-y-0.5"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />
@@ -78,14 +78,14 @@ const Testimonials: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="bg-white rounded-2xl p-8 shadow-lg relative z-10"
+                    className="bg-white dark:bg-zinc-900  rounded-2xl p-8 shadow-lg relative z-10"
                   >
                     <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
                       <div className="flex-shrink-0">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md"
+                          className="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-zinc-900   shadow-md"
                         />
                       </div>
                       <div className="flex-1">

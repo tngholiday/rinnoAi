@@ -11,7 +11,7 @@ const About: React.FC = () => {
   const isStatsInView = useInView(statsRef);
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="about" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-zinc-800 dark:to-zinc-900">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
             >
               Innovative IT Solutions Driving Business Success
             </motion.h2>
@@ -35,7 +35,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-gray-700 mb-6"
+              className="text-gray-700 dark:text-gray-300 mb-6"
             >
               Founded in 2010, TechSphere has been at the forefront of delivering cutting-edge IT solutions to businesses of all sizes. Our mission is to empower organizations through technology, helping them navigate the digital landscape with confidence.
             </motion.p>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-gray-700 mb-8"
+              className="text-gray-700 dark:text-gray-300 mb-8 "
             >
               With a team of experienced IT professionals, we offer a comprehensive range of services from IT infrastructure management and cybersecurity to software development and cloud solutions. Our client-centric approach ensures that we understand your unique business needs and deliver solutions that drive growth and success.
             </motion.p>
@@ -51,7 +51,7 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex space-x-4"
+                className="flex space-x-4"
             >
               <a 
                 href="#team" 
@@ -61,7 +61,7 @@ const About: React.FC = () => {
               </a>
               <a 
                 href="#contact" 
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full font-medium bg-white text-blue-600 border border-blue-200 hover:border-blue-300 shadow-sm transition transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full font-medium bg-white text-blue-600 border border-blue-200 hover:border-blue-300 shadow-sm transition transform hover:-translate-y-0.5"
               >
                 Get in Touch
               </a>

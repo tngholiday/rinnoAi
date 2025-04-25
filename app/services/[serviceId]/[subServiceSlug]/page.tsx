@@ -43,7 +43,7 @@ export default function SubServicePage({ params }: SubServicePageProps) {
          <About />
          <Team />
          <Testimonials />
-         <Pricing />
+        
          <FAQ />
          <Contact />
          

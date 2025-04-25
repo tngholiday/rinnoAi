@@ -14,14 +14,14 @@ const Services: React.FC = () => {
     : services.filter(service => service.category === selectedCategory);
 
   return (
-    <section id="services" className="py-20 bg-white" ref={sectionRef}>
+    <section id="services" className="py-20 bg-white dark:bg-zinc-900 " ref={sectionRef}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.span 
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-block bg-blue-50 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
+            className="inline-block bg-blue-50 dark:bg-zinc-900 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
           >
             Our Services
           </motion.span>
@@ -29,7 +29,7 @@ const Services: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
           >
             Comprehensive IT Solutions for Every Business Need
           </motion.h2>
@@ -37,7 +37,7 @@ const Services: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-600 text-lg"
+            className="text-gray-600 text-lg dark:text-gray-400"
           >
             From infrastructure management to cutting-edge software development, we deliver tailored solutions to help your business thrive.
           </motion.p>
@@ -81,18 +81,18 @@ const Services: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: 0.1 * (index % 4) }}
-              className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-all group"
+              className="bg-white border border-gray-100 dark:bg-zinc-900 dark:border-zinc-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all group"
             >
               <div className="bg-blue-50 p-4 rounded-lg w-16 h-16 flex items-center justify-center mb-5 group-hover:bg-blue-600 transition-all">
                 <Icon name={service.icon} className="w-8 h-8 text-blue-600 group-hover:text-white transition-all" />
               </div>
               <div className="mb-1 flex items-center">
-                <h3 className="text-xl font-semibold text-gray-900 mr-2">{service.title}</h3>
-                <span className="text-xs font-medium bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mr-2 ">{service.title}</h3>
+                <span className="text-xs font-medium bg-gray-100 dark:bg-zinc-800 text-gray-600 px-2 py-0.5 rounded-full">
                   {service.category}
                 </span>
               </div>
-              <p className="text-gray-600 mb-5">{service.description}</p>
+              <p className="text-gray-600 mb-5 dark:text-gray-400">{service.description}</p>
               <a
                 href="#"
                 className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"

@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-white">
+    <section id="contact" ref={sectionRef} className="py-20 bg-white dark:bg-zinc-900">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-block bg-blue-50 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
+              className="inline-block bg-blue-50 dark:bg-zinc-900 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
             >
               Contact Us
             </motion.span>
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
             >
               Get in Touch with Our IT Experts
             </motion.h2>
@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-gray-600 mb-8"
+              className="text-gray-600 dark:text-gray-400 mb-8"
             >
               Have questions about our services or need a custom solution? Reach out to us and our team will get back to you promptly.
             </motion.p>
@@ -59,12 +59,12 @@ const Contact: React.FC = () => {
               className="space-y-6 mb-8"
             >
               <div className="flex items-start">
-                <div className="bg-blue-50 p-3 rounded-full mr-4">
+                <div className="bg-blue-50 dark:bg-zinc-900 p-3 rounded-full mr-4">
                   <MapPin className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Office Location</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Office Location</h3>
+                  <p className="text-gray-600 dark:text-gray-400">
                     123 Innovation Drive<br />
                     Tech Valley, CA 94103
                   </p>
@@ -76,8 +76,8 @@ const Contact: React.FC = () => {
                   <Mail className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Email Us</h3>
+                  <p className="text-gray-600 dark:text-gray-400">
                     <a href="mailto:info@techsphere.com" className="hover:text-blue-600 transition">
                       info@techsphere.com
                     </a><br />
@@ -93,8 +93,8 @@ const Contact: React.FC = () => {
                   <Phone className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Phone</h3>
+                  <p className="text-gray-600 dark:text-gray-400  ">
                     <a href="tel:+15551234567" className="hover:text-blue-600 transition">
                       (555) 123-4567
                     </a><br />
@@ -108,9 +108,9 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl p-6 shadow-lg"
+              className="bg-gradient-to-br from-blue-600 dark:from-zinc-900 to-indigo-700 dark:to-zinc-900 text-white rounded-xl p-6 shadow-lg"
             >
-              <h3 className="font-semibold text-lg mb-2">24/7 Emergency IT Support</h3>
+              <h3 className="font-semibold text-lg mb-2 text-white">24/7 Emergency IT Support</h3>
               <p className="text-blue-100 mb-4">
                 For urgent IT issues requiring immediate assistance, our technical team is available 24/7.
               </p>
@@ -128,9 +128,9 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            className="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl p-8 border border-gray-100"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Send Us a Message</h3>
             
             {formStatus.type && (
               <div 

@@ -8,7 +8,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen pt-24 bg-white">
+    <main className="min-h-screen pt-24 bg-white dark:bg-zinc-900">
       <div className="container mx-auto max-w-7xl px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">Case Studies</h1>
@@ -22,7 +22,7 @@ export default function CaseStudiesPage() {
             <Link
               key={study.id}
               href={`/case-studies/${study.id}`}
-              className="group block bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+              className="group block bg-gray-50 dark:bg-zinc-900  rounded-lg shadow hover:shadow-lg transition"
             >
               <div className="relative h-48 overflow-hidden rounded-t-lg">
                 <Image
@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-primary">
+                  <h2 className="text-xl font-semibold mb-2 group-hover:text-primary">
                   {study.title}
                 </h2>
                 <p className="text-sm text-muted-foreground mb-2">{study.industry}</p>

@@ -57,7 +57,12 @@ export function Navbar() {
               <NavigationMenuItem key={link.href}>
                 {link.submenu ? (
                   <>
-                    <NavigationMenuTrigger>{link.label}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger><Link
+                    href={link.href}
+                    className="text-sm font-medium transition-colors hover:text-primary px-4 py-2"
+                  >
+                    {link.label}
+                  </Link></NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 lg:w-[1000px]">
                         {link.submenu.map((subItem) => (

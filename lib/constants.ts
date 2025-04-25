@@ -7,7 +7,7 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/rinnoai",
   },
 };
-
+import { Code, Database, Cloud, Layers ,Smartphone,BrainCircuit,Layers2, PenTool, Shield} from "lucide-react";
 export const allServices = {
   softwareDev: {
     title: "Software Development",
@@ -18,7 +18,8 @@ export const allServices = {
       "SaaS Product Development",
       "API Development & Integration",
       "Legacy Software Modernization"
-    ]
+    ],
+    icon: Code  
   },
   webDev: {
     title: "Web Development",
@@ -31,16 +32,18 @@ export const allServices = {
       
       "Frontend Development",
       "Backend Development"
-    ]
+    ],
+    icon: Database
   },
   mobileDev: {
     title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications",
+    description: "Native and cross-platform mobile applications services",
     services: [
       "Android App Development",
       "iOS App Development",
       "Cross-platform App Development",
-    ]
+    ],
+    icon: Smartphone
   },
   gameDev: {
     title: "Game Development",
@@ -49,7 +52,8 @@ export const allServices = {
       "2D & 3D Game Design",
       "Unity Game Development",
       "HTML5 Game Development",
-    ]
+    ],
+    icon: Layers2
   },
   aiML: {
     title: "AI & Machine Learning",
@@ -58,7 +62,8 @@ export const allServices = {
       "AI-powered Chatbots",
       "Natural Language Processing",
       "Machine Learning Model Training"
-    ]
+    ],
+    icon: BrainCircuit
   },
   cloud: {
     title: "Cloud Services",
@@ -67,7 +72,8 @@ export const allServices = {
       "Cloud App Development",
       "DevOps & CI/CD Services",
       "Cloud Security Solutions"
-    ]
+    ],
+    icon: Cloud
   },
   testing: {
     title: "QA & Testing",
@@ -76,7 +82,8 @@ export const allServices = {
       "Manual Testing",
       "Automated Testing",
       "Performance Testing",
-    ]
+    ],
+    icon: Code
   },
   design: {
     title: "UI/UX Design",
@@ -87,7 +94,8 @@ export const allServices = {
       "Mobile App & Web App Design",
 
       "Design Systems & Branding"
-    ]
+    ],
+    icon: PenTool
   },
  
   marketing: {
@@ -98,7 +106,8 @@ export const allServices = {
       "Social Media Marketing",
       "Content Marketing",
 
-    ]
+    ],
+    icon: PenTool
   },
   security: {
     title: "Cybersecurity",
@@ -108,7 +117,8 @@ export const allServices = {
       "Penetration Testing",
       "Data Encryption & Privacy",
       "Security Compliance"
-    ]
+    ],
+    icon: Shield
   }
 };
 

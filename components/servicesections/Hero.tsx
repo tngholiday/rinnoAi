@@ -20,7 +20,8 @@ const Hero: React.FC = () => {
   return (
     <section className="relative pt-20 md:pt-32 pb-20 md:pb-32 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-zinc-800 dark:to-zinc-900" />
+
       
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden -z-10">
@@ -36,13 +37,13 @@ const Hero: React.FC = () => {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}
           >
-            <div className="inline-block bg-white bg-opacity-80 backdrop-blur-sm rounded-full px-4 py-1 shadow-sm mb-6">
+            <div className="inline-block bg-white bg-opacity-80 dark:bg-zinc-900 backdrop-blur-sm rounded-full px-4 py-1 shadow-sm mb-6">
               <span className="text-blue-600 font-medium text-sm">{pageTitle}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100  mb-6 leading-tight">
               {pageTitle}
             </h1>
-            <p className="text-lg text-gray-700 mb-8 max-w-xl">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-xl">
               We deliver comprehensive IT services and innovative solutions that help businesses thrive in the digital age. Focus on your core business while we handle your technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
