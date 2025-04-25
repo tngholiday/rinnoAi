@@ -73,6 +73,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://rinnoai.com" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
