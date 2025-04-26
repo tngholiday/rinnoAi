@@ -43,22 +43,18 @@ export function Footer() {
           <h3 className="font-semibold text-lg mb-4">Company</h3>
           <ul className="space-y-3">
             <li>
-              <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
                 About Us
               </Link>
             </li>
+           
             <li>
-              <Link href="#team" className="text-muted-foreground hover:text-foreground transition-colors">
-                Our Team
-              </Link>
-            </li>
-            <li>
-              <Link href="#careers" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
                 Careers
               </Link>
             </li>
             <li>
-              <Link href="#blog" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
                 Blog
               </Link>
             </li>
@@ -69,20 +65,16 @@ export function Footer() {
           <h3 className="font-semibold text-lg mb-4">Legal</h3>
           <ul className="space-y-3">
             <li>
-              <Link href="#privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#terms" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
                 Terms of Service
               </Link>
             </li>
-            <li>
-              <Link href="#cookies" className="text-muted-foreground hover:text-foreground transition-colors">
-                Cookie Policy
-              </Link>
-            </li>
+            
           </ul>
         </div>
       </div>

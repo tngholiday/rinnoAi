@@ -7,7 +7,7 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/rinnoai",
   },
 };
-import { Code, Database, Cloud, Layers ,Smartphone,BrainCircuit,Layers2, PenTool, Shield} from "lucide-react";
+import { Code, Database, Cloud, Layers ,Smartphone,BrainCircuit,Layers2, PenTool, Shield, ShoppingCart, HeartHandshake, BookOpen, Truck, Video, ChartLine, User, Warehouse, CreditCard, Plane  } from "lucide-react";
 export const allServices = {
   softwareDev: {
     title: "Software Development",
@@ -171,50 +171,163 @@ export const navLinks: NavLink[] = [
 ];
 
 export const industries = {
+  travel: {
+    title: "Travel & Hospitality",
+    description: "Streamline travel and hospitality operations",
+    solutions: [
+      {
+        title: "Booking Systems",
+        description: "Manage reservations and bookings",
+        icon: Plane
+      },
+      {
+        title: "Inventory Management",
+        description: "Optimize inventory and supply chain operations",
+        icon: Warehouse
+      },
+      {
+        title: "Customer Relationship Management",
+        description: "Manage customer relationships and preferences",
+        icon: User
+      },
+    ],
+    solutionsDescription: "Streamline travel and hospitality operations",
+    icon: Plane
+  },
   healthcare: {
     title: "Healthcare",
     description: "Digital transformation solutions for healthcare providers",
     solutions: [
-      "Electronic Health Records (EHR)",
-      "Telemedicine Platforms",
-      "Healthcare Analytics",
-      "Patient Management Systems",
-      "Medical Imaging Solutions"
-    ]
+      {
+        title: "Electronic Health Records (EHR)",
+        description: "Streamline patient records and medical data",
+        icon: HeartHandshake
+      },
+      {
+        title: "Telemedicine Platforms",
+        description: "Provide remote consultations and patient monitoring",
+        icon: Video
+      },
+      {
+        title: "Healthcare Analytics",
+        description: "Analyze medical data to improve patient care",
+          icon: ChartLine
+      },
+      {
+        title: "Patient Management Systems",
+        description: "Manage patient information and medical records",
+        icon: User
+      },
+      {
+        title: "Medical Imaging Solutions",
+        description: "Provide advanced imaging services for diagnosis",
+        icon: HeartHandshake
+      },
+      {
+        title: "Telemedicine Platforms",
+        description: "Provide remote consultations and patient monitoring",
+        icon: Video
+      },
+      {
+        title: "Healthcare Analytics",
+        description: "Analyze medical data to improve patient care",
+          icon: ChartLine
+      },
+      {
+        title: "Patient Management Systems",
+        description: "Manage patient information and medical records",
+        icon: User
+      },
+    ],
+    solutionsDescription: "Digital transformation solutions for healthcare providers",  
+    icon: HeartHandshake
   },
   education: {
     title: "Education",
     description: "EdTech solutions for modern learning",
     solutions: [
-      "Learning Management Systems",
-      "Virtual Classrooms",
-      "Student Information Systems",
-      "Educational Apps",
-      "Assessment Platforms"
-    ]
+      {
+        title: "Learning Management Systems",
+        description: "Manage educational content and student progress",
+        icon: BookOpen
+      },
+      {
+        title: "Virtual Classrooms",
+        description: "Create interactive learning environments",
+        icon: Video
+      },
+      {
+        title: "Student Information Systems",
+        description: "Track student progress and performance",
+        icon: User
+      },
+      {
+        title: "Educational Apps",
+        description: "Create educational apps for modern learning",
+        icon: Smartphone
+      },
+      {
+        title: "Assessment Platforms",
+        description: "Create assessment platforms for modern learning",
+        icon: BookOpen
+      }
+    ],
+    solutionsDescription: "EdTech solutions for modern learning",
+    icon: BookOpen
   },
   logistics: {
     title: "Logistics",
     description: "Smart solutions for supply chain and logistics",
     solutions: [
-      "Fleet Management Systems",
-      "Warehouse Management",
-      "Route Optimization",
-      "Supply Chain Analytics",
-      "Inventory Management"
-    ]
+      {
+        title: "Fleet Management Systems",
+        description: "Track vehicle and driver performance",
+        icon: Truck
+      },
+      {
+        title: "Warehouse Management",
+        description: "Optimize inventory and supply chain operations",
+        icon: Warehouse
+      },
+      {
+        title: "Route Optimization",
+        description: "Optimize delivery routes and schedules",
+        icon: Truck
+      },
+      {
+        title: "Supply Chain Analytics",
+        description: "Analyze supply chain data to improve efficiency",
+        icon: ChartLine
+      },
+    ],
+    solutionsDescription: "Smart solutions for supply chain and logistics",
+    icon: Truck
   },
   ecommerce: {
     title: "E-commerce",
     description: "End-to-end e-commerce solutions",
     solutions: [
-      "Custom E-commerce Platforms",
-      "Marketplace Development",
-      "Payment Integration",
-      "Inventory Management",
-      "Analytics & Reporting"
-    ]
-  }
+      {
+        title: "Custom E-commerce Platforms",
+        description: "Create tailored e-commerce solutions for your business",
+        icon: ShoppingCart
+      },
+      {
+        title: "Marketplace Development",
+        description: "Build multi-vendor marketplaces for seamless trading",
+        icon: ShoppingCart
+      },
+      {
+        title: "Payment Integration",
+        description: "Integrate secure payment gateways for smooth transactions",
+        icon: CreditCard
+      },  
+  
+    ],
+    solutionsDescription: "End-to-end e-commerce solutions",
+    icon: ShoppingCart
+  },
+ 
 };
 
 export const services = [
@@ -310,4 +423,31 @@ export const faqs = [
     question: "What industries do you serve?",
     answer: "We serve various industries including healthcare, education, logistics, e-commerce, finance, and manufacturing, providing tailored solutions for each sector."
   }
+];
+
+export const blogPosts = [
+  {
+    slug: "how-to-build-a-website", 
+    readTime: "8 min read",
+    comments: "24 comments",  
+    title: "How to Build a Website",
+    description: "Learn step-by-step how to create your first website.",
+    content: `
+      Building a website involves planning, designing, developing, and launching it.
+      Make sure to understand the purpose, choose the right tech stack, and test properly before going live.
+    `,
+    date: "2025-04-20",
+  },
+  {
+    slug: "seo-tips-for-beginners",
+    readTime: "8 min read",
+    comments: "24 comments",
+    title: "SEO Tips for Beginners",
+    description: "A quick guide to boosting your site's visibility.",
+    content: `
+      SEO is crucial for organic traffic. Focus on keywords, optimize meta tags,
+      improve page load speed, and produce high-quality content regularly.
+    `,
+    date: "2025-04-22",
+  },
 ];

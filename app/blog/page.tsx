@@ -62,17 +62,17 @@ export default function BlogPage() {
               {
                 title: "The Future of Web Development",
                 desc: "Explore the latest trends in frontend and backend technologies.",
-                link: "/blog/future-of-web"
+                link: "/blogdetail/how-to-build-a-website"
               },
               {
                 title: "Designing for Accessibility",
                 desc: "How inclusive design improves UX and expands your reach.",
-                link: "/blog/accessibility-design"
+                link: "/blogdetail/seo-tips-for-beginners"
               },
               {
                 title: "Why SEO Still Matters in 2025",
                 desc: "Tips and strategies to stay ahead in search rankings.",
-                link: "/blog/seo-in-2025"
+                link: "/blogdetail/seo-tips-for-beginners"
               },
             ].map((post, i) => (
               <div key={i} className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-md">

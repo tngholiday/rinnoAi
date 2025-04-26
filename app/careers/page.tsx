@@ -1,249 +1,301 @@
-'use client';
-import { Briefcase, Lightbulb, Clock, Heart, Users, Rocket, Quote } from "lucide-react";
-import { useState } from 'react';
-import { X } from 'lucide-react';
-export default function CareersPage() {
-  const [isOpen, setIsOpen] = useState(false);
+'use client'
+import React, { useState } from 'react';
+import { 
+  Briefcase, 
+  Users, 
+  Star, 
+  ArrowRight, 
+  X,
+  GraduationCap,
+  Coffee,
+  Heart,
+  Globe,
+  Building
+} from 'lucide-react';
+
+const Careers: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState('');
+
+  const openModal = (jobTitle: string) => {
+    setSelectedJob(jobTitle);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedJob('');
+  };
+
   return (
- <div className="dark:bg-zinc-900">
-     <main className="min-h-screen pt-24 dark:bg-zinc-900 container mx-auto max-w-7xl">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
-     
-    <>
-      {/* Join Team Section */}
-      <section className="container mx-auto px-4 py-12 text-center">
-        <h1 className="text-4xl font-bold mb-6 dark:text-white">Join Our Team</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Explore open roles and build your career with us.
-        </p>
-        <button
-          onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-md hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition"
-        >
-          View Open Positions
-        </button>
+      <section className="relative bg-gradient-to-r from-blue-100 to-indigo-800 dark:from-blue-950 dark:to-indigo-950 py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Join Our Team of <span className="text-blue-300">AI Innovators</span>
+            </h1>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+              Be part of a team that's shaping the future of artificial intelligence and creating solutions that make a difference.
+            </p>
+            <button 
+              onClick={() => openModal('General Application')}
+              className="bg-white dark:bg-gray-800 text-blue-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 transition duration-300 font-medium py-3 px-8 rounded-lg inline-flex items-center"
+            >
+              Submit General Application <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </div>
+        </div>
       </section>
 
-      {/* Modal Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          {/* Modal Content */}
-          <div className="bg-white dark:bg-gray-900 rounded-xl p-8 w-full max-w-lg mx-auto shadow-xl relative">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white transition"
-            >
-              <X size={24} />
-            </button>
-            <h2 className="text-2xl font-semibold mb-4 dark:text-white">Tell Us About You</h2>
-            <form className="space-y-4 text-left">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-                  placeholder="Your name"
-                />
+      {/* Benefits Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Join Rinno AI?</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              We offer more than just a job - we offer a career with purpose and growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                <GraduationCap className="h-6 w-6 text-blue-600 dark:text-blue-300" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Learning & Development</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Continuous learning opportunities through workshops, conferences, and online courses.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-6">
+                <Coffee className="h-6 w-6 text-green-600 dark:text-green-300" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Work-Life Balance</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Flexible working hours, remote work options, and generous vacation policy.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                <Heart className="h-6 w-6 text-purple-600 dark:text-purple-300" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Health & Wellness</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Comprehensive health coverage, wellness programs, and mental health support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Open Positions */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Open Positions</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Find your perfect role in our growing team.
+            </p>
+          </div>
+
+          <div className="grid gap-6">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Senior AI Engineer</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Lead the development of our next-generation AI solutions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                      Full-time
+                    </span>
+                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                      Remote
+                    </span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                      AI/ML
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => openModal('Senior AI Engineer')}
+                  className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 font-medium py-2 px-6 rounded-lg inline-flex items-center"
+                >
+                  Apply Now <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Full Stack Developer</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Build robust and scalable applications that power our AI solutions.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                      Full-time
+                    </span>
+                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                      Hybrid
+                    </span>
+                    <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm">
+                      Development
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => openModal('Full Stack Developer')}
+                  className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 font-medium py-2 px-6 rounded-lg inline-flex items-center"
+                >
+                  Apply Now <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Product Manager</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Shape the future of our AI products and drive innovation.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                      Full-time
+                    </span>
+                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                      On-site
+                    </span>
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">
+                      Product
+                    </span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => openModal('Product Manager')}
+                  className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 font-medium py-2 px-6 rounded-lg inline-flex items-center"
+                >
+                  Apply Now <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Apply for {selectedJob}
+              </h3>
+              <button
+                onClick={closeModal}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <form className="p-6 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                  />
+                </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Email
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-                  placeholder="you@example.com"
+                  id="email"
+                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="resume" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Resume/CV
+                </label>
+                <input
+                  type="file"
+                  id="resume"
+                  accept=".pdf,.doc,.docx"
+                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Cover Letter
                 </label>
                 <textarea
+                  id="coverLetter"
                   rows={4}
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-                  placeholder="Tell us what you're looking for..."
+                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  placeholder="Tell us why you'd be a great fit..."
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-white py-2 rounded-md hover:from-green-600 hover:via-blue-600 hover:to-purple-600 transition"
-              >
-                Submit Application
-              </button>
+              <div className="flex justify-end gap-4">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="px-6 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                >
+                  Submit Application
+                </button>
+              </div>
             </form>
           </div>
         </div>
       )}
-    </>
-  
-
-
-
-             
-
-{/* Why Join Us */}
-<section className="bg-gray-50 dark:bg-zinc-900   py-20">
-  <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-bold mb-4 dark:text-white ">Why Work With Us</h2>
-    <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
-      We're not just a workplace — we're a community where your growth, well-being, and creativity are supported every step of the way.
-    </p>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      <div className="p-6 bg-white dark:bg-zinc-900 rounded-xl shadow hover:shadow-md transition duration-300">
-        <Briefcase className="mx-auto text-blue-600 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Career Growth</h3>
-        <p className="text-muted-foreground">
-          We offer clear career paths, mentorship programs, and continuous learning opportunities to help you thrive.
-        </p>
-      </div>
-      <div className="p-6 bg-white dark:bg-zinc-900 rounded-xl shadow hover:shadow-md transition duration-300">
-        <Lightbulb className="mx-auto text-yellow-500 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Innovative Culture</h3>
-        <p className="text-muted-foreground">
-          Work in an environment that values creativity, experimentation, and forward-thinking solutions.
-        </p>
-      </div>
-      <div className="p-6 bg-white dark:bg-zinc-900   rounded-xl shadow hover:shadow-md transition duration-300">
-        <Clock className="mx-auto text-purple-500 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Work-Life Balance</h3>
-        <p className="text-muted-foreground">
-          Enjoy remote-friendly roles, flexible hours, and a culture that respects your time outside of work.
-        </p>
-      </div>
-      <div className="p-6 bg-white dark:bg-zinc-900   rounded-xl shadow hover:shadow-md transition duration-300">
-        <Heart className="mx-auto text-pink-500 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Wellbeing Focused</h3>
-        <p className="text-muted-foreground">
-          From mental health resources to wellness initiatives, your well-being is a top priority.
-        </p>
-      </div>
-      <div className="p-6 bg-white dark:bg-zinc-900   rounded-xl shadow hover:shadow-md transition duration-300">
-        <Users className="mx-auto text-green-500 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Inclusive Team</h3>
-        <p className="text-muted-foreground">
-          Join a diverse and inclusive team where every voice is heard and respected.
-        </p>
-      </div>
-      <div className="p-6 bg-white dark:bg-zinc-900   rounded-xl shadow hover:shadow-md transition duration-300">
-        <Rocket className="mx-auto text-red-500 mb-4" size={32} />
-        <h3 className="text-xl font-semibold mb-2">Make an Impact</h3>
-        <p className="text-muted-foreground">
-          Your work matters. Contribute to meaningful projects that create real-world change.
-        </p>
-      </div>
     </div>
-  </div>
-</section>
-
-
-<section className="bg-white dark:bg-zinc-900 py-20">
-  <div className="container mx-auto px-4 md:px-8">
-    <div className="grid md:grid-cols-2 gap-12 items-center">
-      {/* Text Content */}
-      <div>
-        <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Culture</h2>
-        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-          At the heart of our company is a culture built on trust, collaboration, and creativity. We believe in empowering people to bring their best selves to work — every voice matters, and innovation thrives when everyone feels supported.
-        </p>
-        <ul className="space-y-4 text-left">
-          <li className="flex items-start gap-3">
-            <span className="text-green-500 font-bold text-xl">✓</span>
-            <span className="text-muted-foreground">Team-first mentality with open communication</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-green-500 font-bold text-xl">✓</span>
-            <span className="text-muted-foreground">Celebration of diversity and individual growth</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-green-500 font-bold text-xl">✓</span>
-            <span className="text-muted-foreground">Regular team events, hackathons, and retreats</span>
-          </li>
-        </ul>
-      </div>
-
-      {/* Image Content */}
-      <div className="relative group">
-        <img
-          src="https://bstate.com/wp-content/uploads/2021/03/friendly-office-meeting-1024x576.jpg"
-          alt="Our Team"
-          className="rounded-2xl shadow-xl w-full transform group-hover:scale-105 transition duration-500"
-        />
-        <div className="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-full shadow text-sm font-medium text-gray-700">
-          A glimpse of our team in action
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-{/* Testimonials */}
-<section className="bg- dark:bg-zinc-900 py-24">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold mb-4 dark:text-white">What Our Team Says</h2>
-      <p className="text-muted-foreground max-w-2xl mx-auto">
-        Hear from the people who make our culture what it is. We value every voice — here’s what our team has to say.
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 dark:bg-zinc-900">
-      {/* Testimonial Card */}
-      {[
-        {
-          quote: "Working here has been a game-changer. I feel truly supported and challenged to grow every day.",
-          name: "Alex",
-          title: "Frontend Developer",
-          image: "/images/team/alex.jpg",
-        },
-        {
-          quote: "The flexibility and culture here are unmatched. I love being part of a team that cares.",
-          name: "Sam",
-          title: "Product Manager",
-          image: "/images/team/sam.jpg",
-        },
-        {
-          quote: "I've never felt more valued or inspired. The leadership team actually listens and empowers us.",
-          name: "Jamie",
-          title: "UX Designer",
-          image: "/images/team/jamie.jpg",
-        },
-      ].map((testimonial, idx) => (
-        <div
-          key={idx}
-          className="bg-white dark:bg-zinc-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
-        >
-          <Quote className="text-blue-500 mb-4" size={32} />
-          <p className="italic text-muted-foreground mb-6">"{testimonial.quote}"</p>
-          <img
-            src={testimonial.image}
-            alt={testimonial.name}
-            className="w-16 h-16 rounded-full mb-2 object-cover shadow-md"
-          />
-          <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
-          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-      {/* Final Call to Action */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-lg text-muted-foreground mb-6">We're always looking for passionate, creative, and driven people to join us.</p>
-          <button onClick={() => setIsOpen(true)} className="bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-white px-8 py-4 rounded-md hover:from-green-600 hover:via-blue-600 hover:to-purple-600 transition">
-            Browse Careers
-          </button>
-        </div>
-      </section>
-    </main>
- </div>
   );
-}
+};
+
+export default Careers;

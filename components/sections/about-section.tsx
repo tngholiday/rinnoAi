@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import { Code, Zap, LineChart, Users } from "lucide-react";
 
 export function AboutSection() {
   const [mounted, setMounted] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -45,6 +45,7 @@ export function AboutSection() {
               challenges and opportunities.
             </p>
             <Button
+              onClick={() => router.push('/blog')}
               size="lg"
               className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium"
             >

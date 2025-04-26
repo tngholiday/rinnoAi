@@ -1,17 +1,22 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { Activity, ChevronRight, Headset, Users, Rocket, Shield, CheckCircle } from "lucide-react";
+import { Activity, ChevronRight, Headset, Users, Rocket, Shield, CheckCircle, Code, Paintbrush, Megaphone, Settings, Database, Layers2, Cloud, Layers, PenTool, ShoppingCart, Apple, Smartphone, Gamepad, BrainCircuit } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiTypescript, SiPostgresql, SiDocker, SiGraphql } from "react-icons/si";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 interface ClientServicePageProps {
   service: {
     title: string;
     description: string;
     services: string[];
     serviceId: string;
+    
   };
 }
 
@@ -37,6 +42,46 @@ const techIcons = [
   ];
   
 export default function ClientServicePage({ service }: ClientServicePageProps) {
+  const iconMap: Record<string, JSX.Element> = {
+    "Custom Software Development": <Code className="h-5 w-5 text-primary" />,
+    "Enterprise Software Solutions": <Database className="h-5 w-5 text-primary" />,
+    "SaaS Product Development": <Cloud className="h-5 w-5 text-primary" />,
+    "API Development & Integration": <Layers className="h-5 w-5 text-primary" />,
+    "Legacy Software Modernization": <Layers2 className="h-5 w-5 text-primary" />,
+    "Website Design & Development": <PenTool className="h-5 w-5 text-primary" />,
+    "Custom Web App Development": <Code className="h-5 w-5 text-primary" />,
+    "E-commerce Solutions": <ShoppingCart className="h-5 w-5 text-primary" />,
+    "Frontend Development": <Code className="h-5 w-5 text-primary" />,
+    "Backend Development": <Database className="h-5 w-5 text-primary" />,
+    "Android App Development": <Smartphone className="h-5 w-5 text-primary" />,
+    "iOS App Development": <Apple className="h-5 w-5 text-primary" />,
+    "Cross-platform App Development": <Smartphone className="h-5 w-5 text-primary" />,
+    "2D & 3D Game Design": <Gamepad className="h-5 w-5 text-primary" />,
+    "Unity Game Development": <Gamepad className="h-5 w-5 text-primary" />,
+    "HTML5 Game Development": <Gamepad className="h-5 w-5 text-primary" />,
+    "AI-powered Chatbots": <BrainCircuit className="h-5 w-5 text-primary" />,
+    "Natural Language Processing": <BrainCircuit className="h-5 w-5 text-primary" />,
+    "Machine Learning Model Training": <BrainCircuit className="h-5 w-5 text-primary" />,
+    "Cloud App Development": <Cloud className="h-5 w-5 text-primary" />,
+    "DevOps & CI/CD Services": <Settings className="h-5 w-5 text-primary" />,
+    "Cloud Security Solutions": <Shield className="h-5 w-5 text-primary" />,
+    "Manual Testing": <CheckCircle className="h-5 w-5 text-primary" />,
+    "Automated Testing": <CheckCircle className="h-5 w-5 text-primary" />,
+    "Performance Testing": <CheckCircle className="h-5 w-5 text-primary" />,
+    "Mobile App & Web App Design": <Paintbrush className="h-5 w-5 text-primary" />,
+    "Design Systems & Branding": <Paintbrush className="h-5 w-5 text-primary" />,
+    "Search Engine Optimization": <Megaphone className="h-5 w-5 text-primary" />,
+    "Social Media Marketing": <Megaphone className="h-5 w-5 text-primary" />,
+    "Content Marketing": <Megaphone className="h-5 w-5 text-primary" />,  
+    "Web & App Security": <Shield className="h-5 w-5 text-primary" />,
+    "Penetration Testing": <Shield className="h-5 w-5 text-primary" />,
+    "Data Encryption & Privacy": <Shield className="h-5 w-5 text-primary" />,
+    "Security Compliance": <Shield className="h-5 w-5 text-primary" />,   
+    
+    
+
+
+  };
   return (
     <main className="min-h-screen pt-20">
       {/* 1. Hero Section */}
@@ -55,52 +100,61 @@ export default function ClientServicePage({ service }: ClientServicePageProps) {
 
         {/* 2. Detailed Services */}
         <section>
-  <h2 className="text-3xl font-bold mb-10">Our Services</h2>
+      <h2 className="text-3xl font-bold mb-10">Our Services</h2>
 
-<div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-  {service.services.map((item: string, index: number) => {
-    const imageUrl = serviceImages[index % serviceImages.length];
-    const serviceSlug = item.toLowerCase().replace(/\s+/g, "-"); // basic slug
-
-    return (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.1, duration: 0.4 }}
-        className="relative rounded-xl h-40 shadow-lg hover:shadow-2xl overflow-hidden group transition-all duration-300"
+      <Swiper
+      slidesPerView={1}
+      spaceBetween={20}
+      pagination={{ clickable: true }}
+      loop={true} // 🔁 Infinite loop
+      autoplay={{ delay: 3000, disableOnInteraction: false }} // 🔄 Auto-scroll
+      breakpoints={{
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 3 },
+      }}
+      modules={[Pagination]}
+      className="!pb-10"
       >
-        <Link href={`/services/${service.serviceId}/${serviceSlug}`} className="block h-full w-full">
-          {/* Background image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
+        {service.services.map((item: string, index: number) => {
+          const imageUrl = serviceImages[index % serviceImages.length];
+          const serviceSlug = item.toLowerCase().replace(/\s+/g, "-");
+          const icon = iconMap[item]
 
-          {/* Overlay */}
-          <div className="absolute inset-0 z-0 transition-all" />
+          return (
+            <SwiperSlide key={index}>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.1, duration: 0.4 }}
+    className="relative h-60 rounded-2xl p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+  >
+    {/* Background image layer */}
+    <div
+      className="absolute inset-0 rounded-xl bg-cover bg-center z-0"
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    />
+    {/* Optional dark overlay for readability */}
+    <div className="absolute inset-0 z-0 bg-black/30 backdrop-blur-sm rounded-xl" />
 
-          {/* Card content */}
-          <Card className="relative items-center z-10 h-full p-6 bg-white/80 dark:bg-zinc-900/70 rounded-xl border dark:border-white/10 transition-all duration-300">
-            <div className="flex items-center space-x-4 pt4">
-              <div className="shrink-0 p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <ChevronRight className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {item}
-                </h3>
-              </div>
-            </div>
-          </Card>
-        </Link> 
-      </motion.div>
-    );
-  })}
-</div>
+    <Link href={`/services/${service.serviceId}/${serviceSlug}`} className="relative z-10 block h-full w-full">
+      <Card className="h-full w-full rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xs flex items-center px-5 py-4 space-x-4 transition-all duration-300 hover:bg-white/80 dark:hover:bg-zinc-900/80">
+        <div className="shrink-0 p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shadow-inner">
+          {icon}
+        </div>
+        <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+          {item}
+        </h3>
+      </Card>
+    </Link>
+  </motion.div>
+</SwiperSlide>
 
-</section>
+          );
+        })}
+      </Swiper>
+    </section>
 
 <section className="bg-muted/30 dark:bg-muted/20 rounded-2xl">
   <h2 className="text-3xl font-bold mb-8 text-foreground">Why Choose Us?</h2>
