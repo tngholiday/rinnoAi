@@ -47,7 +47,7 @@ export function WhatsAppFloat() {
       ) : (
         <button
           onClick={() => setOpen(true)}
-          className="bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg flex items-center justify-center"
+          className="bg-green-500 hover:bg-green-600 p-4 rounded-full text-white shadow-lg flex items-center justify-center"
         >
           {/* WhatsApp SVG Icon */}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">

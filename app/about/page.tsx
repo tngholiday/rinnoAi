@@ -245,7 +245,7 @@ const AboutUs: React.FC = () => {
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg group">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.pexels.com/photos/8434891/pexels-photo-8434891.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="COO" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -397,7 +397,7 @@ const AboutUs: React.FC = () => {
             <div className="group">
               <div className="h-64 rounded-xl overflow-hidden mb-6">
                 <img 
-                  src="https://images.pexels.com/photos/8396610/pexels-photo-8396610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Rinno Cognitive Assistant" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -552,7 +552,7 @@ const AboutUs: React.FC = () => {
               </p>
               <div className="flex items-center">
                 <img 
-                  src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Testimonial" 
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
