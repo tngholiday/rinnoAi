@@ -39,7 +39,7 @@ export default function SubServicePage({ params }: SubServicePageProps) {
       <div className=" ">
       
          <Hero />
-         <Services />
+         {/* <Services /> */}
          <About />
          <Team />
          <Testimonials />

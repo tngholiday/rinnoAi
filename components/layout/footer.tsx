@@ -16,7 +16,7 @@ export function Footer() {
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center space-x-2 mb-4">
           <Link href="/" className="flex items-center space-x-2">
-          <Image src={logoSrc} alt="RinnoAI Logo" className="w-36 h-14" width={60} height={40} />
+          <Image src={logoSrc} alt="RinnoAI Logo" className="w-36" width={60} height={40} />
           
         </Link>
           </div>

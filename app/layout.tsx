@@ -7,7 +7,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AIAssist } from "@/components/layout/AIAssist";
 import { BackToTop } from "@/components/layout/BackToTop";
-
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -76,18 +76,19 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-          <Footer />
-          <AIAssist />
-          <BackToTop />
-        </ThemeProvider>
+      <ThemeProvider
+  attribute="class"
+  defaultTheme="system"
+  enableSystem
+  disableTransitionOnChange
+>
+  <Navbar />
+  {children}
+  <Footer />
+  <AIAssist />
+  <BackToTop />
+  <WhatsAppFloat />  {/* <-- Add this here */}
+</ThemeProvider>
       </body>
     </html>
   );

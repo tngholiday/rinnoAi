@@ -3,6 +3,8 @@ import React, { useRef } from 'react';
 import { statistics } from '@/app/data/stats';
 import { motion, useInView } from '@/app/utils/animation';
 import { Icon } from '../ui/Icon';
+import { allServices } from "@/lib/constants";
+
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

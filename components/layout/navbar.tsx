@@ -39,14 +39,14 @@ export function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm p-2"
-          : "bg-transparent p-2"
+          ? "bg-background/80 backdrop-blur-md shadow-sm p-1"
+          : "bg-transparent p-1"
       )}
     >
       <div className="container mx-auto max-w-7xl">
       <div className=" flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={logoSrc} alt="RinnoAI Logo" className="w-36 h-14" width={60} height={40} />
+          <Image src={logoSrc} alt="RinnoAI Logo" className="w-36 " width={60} height={40} />
           
         </Link>
 
@@ -117,74 +117,74 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center space-x-2">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
-        </div>
+  <ThemeToggle />
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  >
+    {mobileMenuOpen ? (
+      <X className="h-6 w-6" />
+    ) : (
+      <Menu className="h-6 w-6" />
+    )}
+  </Button>
+</div>
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md shadow-lg">
-          <nav className="container py-6 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <div key={link.href}>
-                {link.submenu ? (
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between px-4 py-2">
-                      <span className="text-sm font-medium">{link.label}</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </div>
-                    <div className="pl-6 space-y-2">
-                      {link.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          className="block rounded-lg bg-background/50 px-4 py-3 transition-colors hover:bg-accent/10 focus:bg-accent/20"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <div className="space-y-1">
-                            <h4 className="text-sm font-semibold">{subItem.label}</h4>
-                           
-                            {subItem.services && (
-                              <ul className="mt-1 space-y-1 text-xs text-muted-foreground list-disc list-inside">
-                                {subItem.services.map((svc) => (
-                                  <li key={svc}>{svc}</li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md p-6 overflow-y-auto">
+    <nav className="flex flex-col space-y-6">
+      {navLinks.map((link) => (
+        <div key={link.href}>
+          {link.submenu ? (
+            <details className="group">
+              <summary className="flex items-center justify-between cursor-pointer py-2 text-lg font-medium hover:text-primary">
+                {link.label}
+                <ChevronDown className="h-5 w-5 transform group-open:rotate-180 transition-transform" />
+              </summary>
+              <div className="pl-4 mt-2 space-y-2">
+                {link.submenu.map((subItem) => (
                   <Link
-                    href={link.href}
-                    className="block text-sm font-medium hover:text-primary px-4 py-2"
+                    key={subItem.href}
+                    href={subItem.href}
                     onClick={() => setMobileMenuOpen(false)}
+                    className="block rounded-md px-3 py-2 bg-background/70 hover:bg-accent/20 text-sm font-medium transition-colors"
                   >
-                    {link.label}
+                    <div>
+                      {subItem.label}
+                      {subItem.services && (
+                        <ul className="mt-1 ml-4 list-disc space-y-1 text-xs text-muted-foreground">
+                          {subItem.services.map((svc) => (
+                            <li key={svc}>{svc}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </Link>
-                )}
+                ))}
               </div>
-            ))}
-            <Button className="mt-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
-              Contact Us
-            </Button>
-          </nav>
+            </details>
+          ) : (
+            <Link
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-lg font-medium hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          )}
         </div>
-      )}
+      ))}
+
+      {/* CTA Button */}
+      <Button className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
+        Contact Us
+      </Button>
+    </nav>
+  </div>
+)}
       </div>
     </header>
   );

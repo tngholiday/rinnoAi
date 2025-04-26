@@ -4,10 +4,10 @@ import { services, serviceCategories } from '@/app/data/services';
 import { motion, useInView } from '@/app/utils/animation';
 import { Icon } from '../ui/Icon';
 
-const Services: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+const Services: React.FC = () => {    
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');  
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef);
+  const isInView = useInView(sectionRef); 
 
   const filteredServices = selectedCategory === 'all' 
     ? services 

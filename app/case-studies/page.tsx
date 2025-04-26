@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
           {caseStudies.map((study) => (
             <Link
               key={study.id}
-              href={`/case-studies/${study.id}`}
+              href={`#`}
               className="group block bg-gray-50 dark:bg-zinc-900  rounded-lg shadow hover:shadow-lg transition"
             >
               <div className="relative h-48 overflow-hidden rounded-t-lg">

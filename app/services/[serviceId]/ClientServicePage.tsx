@@ -98,65 +98,50 @@ export default function ClientServicePage({ service }: ClientServicePageProps) {
 
       <div className="container max-w-7xl mx-auto  py-20 space-y-24">
 
-        {/* 2. Detailed Services */}
-        <section>
-      <h2 className="text-3xl font-bold mb-10">Our Services</h2>
+       {/* 2. Detailed Services */}
+<section>
+  <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
 
-      <Swiper
-      slidesPerView={1}
-      spaceBetween={20}
-      pagination={{ clickable: true }}
-      loop={true} // 🔁 Infinite loop
-      autoplay={{ delay: 3000, disableOnInteraction: false }} // 🔄 Auto-scroll
-      breakpoints={{
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 4 },
-        1280: { slidesPerView: 3 },
-      }}
-      modules={[Pagination]}
-      className="!pb-10"
-      >
-        {service.services.map((item: string, index: number) => {
-          const imageUrl = serviceImages[index % serviceImages.length];
-          const serviceSlug = item.toLowerCase().replace(/\s+/g, "-");
-          const icon = iconMap[item]
+  <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 px-6">
+    {service.services.map((item: string, index: number) => {
+      const imageUrl = serviceImages[index % serviceImages.length];
+      const serviceSlug = item.toLowerCase().replace(/\s+/g, "-");
+      const icon = iconMap[item];
 
-          return (
-            <SwiperSlide key={index}>
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.1, duration: 0.4 }}
-    className="relative h-60 rounded-2xl p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
-  >
-    {/* Background image layer */}
-    <div
-      className="absolute inset-0 rounded-xl bg-cover bg-center z-0"
-      style={{ backgroundImage: `url(${imageUrl})` }}
-    />
-    {/* Optional dark overlay for readability */}
-    <div className="absolute inset-0 z-0 bg-black/30 backdrop-blur-sm rounded-xl" />
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.6 }}
+          className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl bg-white dark:bg-zinc-900 transition-all duration-500"
+        >
+          {/* Background image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-30 transition-opacity duration-500"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
 
-    <Link href={`/services/${service.serviceId}/${serviceSlug}`} className="relative z-10 block h-full w-full">
-      <Card className="h-full w-full rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xs flex items-center px-5 py-4 space-x-4 transition-all duration-300 hover:bg-white/80 dark:hover:bg-zinc-900/80">
-        <div className="shrink-0 p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shadow-inner">
-          {icon}
-        </div>
-        <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-          {item}
-        </h3>
-      </Card>
-    </Link>
-  </motion.div>
-</SwiperSlide>
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/10 z-0" />
 
-          );
-        })}
-      </Swiper>
-    </section>
+          <Link href={`/services/${service.serviceId}/${serviceSlug}`} className="relative z-10 flex flex-col items-center justify-center text-center p-8 space-y-4 h-60">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 text-primary group-hover:bg-primary/30 transition-colors duration-300 shadow-md">
+              {icon}
+            </div>
+            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+              {item}
+            </h3>
+          </Link>
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
 
-<section className="bg-muted/30 dark:bg-muted/20 rounded-2xl">
+
+<section className="bg-muted/30 dark:bg-muted/20 rounded-2xl px-6">
   <h2 className="text-3xl font-bold mb-8 text-foreground">Why Choose Us?</h2>
 
   <div className="grid md:grid-cols-2 gap-8 text-muted-foreground">
@@ -212,7 +197,7 @@ export default function ClientServicePage({ service }: ClientServicePageProps) {
 
        {/* 4. Technologies We Use */}
        <section className="py-16 overflow-hidden">
-      <h2 className="text-3xl font-bold mb-8 text-foreground pb-10">Technologies We Use</h2>
+      <h2 className="text-3xl font-bold mb-8 text-foreground pb-10 px-6">Technologies We Use</h2>
 
       <div className="relative w-full overflow-hidden">
         <div className="flex space-x-16 animate-marquee text-muted-foreground text-4xl">
@@ -235,7 +220,7 @@ export default function ClientServicePage({ service }: ClientServicePageProps) {
 
 
         {/* 5. Call to Action */}
-        <section className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-10 text-white text-center">
+        <section className="mx-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-10 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Business?</h2>
           <p className="mb-6">
             Let’s talk about how our {service.title.toLowerCase()} services can transform your company.

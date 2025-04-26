@@ -137,5 +137,24 @@ export const caseStudies: CaseStudy[] = [
     clientCompany: 'SecureBank Financial',
     clientImage: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     quote: 'Our digital transformation has positioned us as a leader in modern banking, significantly improving our customer experience and security posture.'
+  },
+  {
+    id: '2',
+    title: 'Financial Institution Achieves Digital Excellence',
+    industry: 'Finance',
+    challenge: 'A regional bank needed to modernize its digital banking platform while maintaining strict security standards.',
+    solution: 'Developed a state-of-the-art digital banking platform with advanced security features and improved user experience.',
+    results: [
+      '200% increase in mobile banking adoption',
+      '40% reduction in operational costs',
+      'Zero security breaches',
+      '95% customer satisfaction rate'
+    ],
+    image: 'https://images.pexels.com/photos/7567473/pexels-photo-7567473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    clientName: 'Michael Roberts',
+    clientRole: 'CTO',
+    clientCompany: 'SecureBank Financial',
+    clientImage: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    quote: 'Our digital transformation has positioned us as a leader in modern banking, significantly improving our customer experience and security posture.'
   }
 ];

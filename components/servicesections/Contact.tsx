@@ -1,37 +1,36 @@
-'use client'
-import React, { useRef, useState } from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import { motion, useInView } from '@/app/utils/animation';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react' ; // <-- Change here!
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef);
-  const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ 
-    type: null, 
-    message: '' 
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulating form submission
-    setFormStatus({
-      type: 'success',
-      message: 'Thank you for your message! We will get back to you shortly.'
-    });
-    // Reset form fields
-    (e.target as HTMLFormElement).reset();
-  };
+  const [state, handleSubmit] = useForm("mgvkvylg"); // <-- Your Formspree form ID
+  if (state.succeeded) {
+    return (
+      <section className="py-20 bg-white dark:bg-zinc-900">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-pink-600">Thank you for your message!</h2>
+          <p className="mt-4 text-gray-700 dark:text-gray-300">We'll get back to you soon.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contact" ref={sectionRef} className="py-20 bg-white dark:bg-zinc-900">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+        <div>
             <motion.span
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-block bg-blue-50 dark:bg-zinc-900 text-blue-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
+              className="inline-block bg-pink-50 dark:bg-zinc-900 text-pink-600 rounded-full px-4 py-1.5 font-medium text-sm mb-3"
             >
               Contact Us
             </motion.span>
@@ -59,8 +58,8 @@ const Contact: React.FC = () => {
               className="space-y-6 mb-8"
             >
               <div className="flex items-start">
-                <div className="bg-blue-50 dark:bg-zinc-900 p-3 rounded-full mr-4">
-                  <MapPin className="text-blue-600" size={24} />
+                <div className="bg-pink-50 dark:bg-zinc-900 p-3 rounded-full mr-4">
+                  <MapPin className="text-pink-600" size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Office Location</h3>
@@ -72,16 +71,16 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="bg-blue-50 p-3 rounded-full mr-4">
-                  <Mail className="text-blue-600" size={24} />
+                <div className="bg-pink-50 p-3 rounded-full mr-4">
+                  <Mail className="text-pink-600" size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Email Us</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    <a href="mailto:info@techsphere.com" className="hover:text-blue-600 transition">
+                    <a href="mailto:info@techsphere.com" className="hover:text-pink-600 transition">
                       info@techsphere.com
                     </a><br />
-                    <a href="mailto:support@techsphere.com" className="hover:text-blue-600 transition">
+                    <a href="mailto:support@techsphere.com" className="hover:text-pink-600 transition">
                       support@techsphere.com
                     </a>
                   </p>
@@ -89,13 +88,13 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="bg-blue-50 p-3 rounded-full mr-4">
-                  <Phone className="text-blue-600" size={24} />
+                <div className="bg-pink-50 p-3 rounded-full mr-4">
+                  <Phone className="text-pink-600" size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Phone</h3>
                   <p className="text-gray-600 dark:text-gray-400  ">
-                    <a href="tel:+15551234567" className="hover:text-blue-600 transition">
+                    <a href="tel:+15551234567" className="hover:text-pink-600 transition">
                       (555) 123-4567
                     </a><br />
                     <span className="text-sm">Monday-Friday, 8am-6pm PST</span>
@@ -108,22 +107,21 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-gradient-to-br from-blue-600 dark:from-zinc-900 to-indigo-700 dark:to-zinc-900 text-white rounded-xl p-6 shadow-lg"
+              className="bg-gradient-to-br from-pink-600 dark:from-zinc-900 to-indigo-700 dark:to-zinc-900 text-white rounded-xl p-6 shadow-lg"
             >
               <h3 className="font-semibold text-lg mb-2 text-white">24/7 Emergency IT Support</h3>
-              <p className="text-blue-100 mb-4">
+              <p className="text-pink-100 mb-4">
                 For urgent IT issues requiring immediate assistance, our technical team is available 24/7.
               </p>
               <a
                 href="tel:+15559112233"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-full font-medium bg-white text-blue-600 hover:bg-blue-50 transition"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-full font-medium bg-white text-pink-600 hover:bg-pink-50 transition"
               >
                 <Phone size={16} className="mr-2" />
                 (555) 911-2233
               </a>
             </motion.div>
           </div>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
@@ -132,16 +130,6 @@ const Contact: React.FC = () => {
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Send Us a Message</h3>
             
-            {formStatus.type && (
-              <div 
-                className={`mb-6 p-4 rounded-lg ${
-                  formStatus.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-                }`}
-              >
-                {formStatus.message}
-              </div>
-            )}
-            
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
@@ -149,62 +137,41 @@ const Contact: React.FC = () => {
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
                     id="name"
+                    type="text"
                     name="name"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition"
-                    placeholder="John Doe"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 transition"
                   />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="email"
                     id="email"
+                    type="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition"
-                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 transition"
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
               </div>
-              
+
               <div className="mb-4">
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                   Company
                 </label>
                 <input
-                  type="text"
                   id="company"
+                  type="text"
                   name="company"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition"
-                  placeholder="Your Company"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 transition"
                 />
               </div>
-              
-              <div className="mb-4">
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                  Service You're Interested In
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition"
-                >
-                  <option value="">Select a service</option>
-                  <option value="IT Infrastructure">IT Infrastructure Management</option>
-                  <option value="Cloud Solutions">Cloud Solutions</option>
-                  <option value="Cybersecurity">Cybersecurity</option>
-                  <option value="Software Development">Software Development</option>
-                  <option value="IT Consulting">IT Consulting</option>
-                  <option value="Managed IT">Managed IT Services</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message <span className="text-red-500">*</span>
@@ -214,16 +181,17 @@ const Contact: React.FC = () => {
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition"
-                  placeholder="Tell us about your project or inquiry..."
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 transition"
                 ></textarea>
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
-              
+
               <button
                 type="submit"
-                className="w-full py-3 px-6 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 shadow-md transition transform hover:-translate-y-0.5"
+                disabled={state.submitting}
+                className="w-full py-3 px-6 rounded-lg font-medium bg-pink-600 text-white hover:bg-pink-700 shadow-md transition transform hover:-translate-y-0.5"
               >
-                Send Message
+                {state.submitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>

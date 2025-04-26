@@ -5,9 +5,9 @@ import { ServicesSection } from "@/components/sections/services-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { TeamSection } from "@/components/sections/team-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { ContactSection } from "@/components/sections/contact-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiTypescript, SiPostgresql, SiDocker, SiGraphql } from "react-icons/si";
+import Contact from "@/components/servicesections/Contact";
 export default function Home() {
 
   const techIcons = [
@@ -50,7 +50,7 @@ export default function Home() {
       <TeamSection />
       <TestimonialsSection />
       <CtaSection />
-      <ContactSection />
+      <Contact />
     
     </main>
   );
