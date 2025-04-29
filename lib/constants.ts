@@ -161,19 +161,23 @@ export const navLinks: NavLink[] = [
         label: "E-commerce",
         description: "End-to-end e-commerce solutions",
       },
+      {
+        href: "/industries/travel",
+        label: "Travel & Tourism",
+        description: "Streamline travel ",
+      },
     ],
   },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/blog", label: "Blog" },
+  
+ {href: "/about", label: "About Us"},
   { href: "/careers", label: "Careers" },
-  { href: "/faq", label: "FAQs" },
-  { href: "/contact", label: "Contact" },
+  
 ];
 
 export const industries = {
   travel: {
-    title: "Travel & Hospitality",
-    description: "Streamline travel and hospitality operations",
+    title: "Travel & Tourism",
+    description: "Streamline travel and tourism operations",
     solutions: [
       {
         title: "Booking Systems",
@@ -191,7 +195,7 @@ export const industries = {
         icon: User
       },
     ],
-    solutionsDescription: "Streamline travel and hospitality operations",
+    solutionsDescription: "Streamline travel and tourism operations",
     icon: Plane
   },
   healthcare: {
@@ -451,3 +455,116 @@ export const blogPosts = [
     date: "2025-04-22",
   },
 ];
+
+export const aboutData = {
+  softwareDev: {
+    title: "Software Development",
+    subtitle: "About Our Software Development",
+    description: "End-to-end software solutions for businesses of all sizes",
+    additionalDescription: "Our team of expert developers specializes in creating custom software solutions that drive business growth. We combine cutting-edge technologies with industry best practices to deliver robust, scalable, and maintainable applications.",
+    image: "https://images.pexels.com/photos/1181243/pexels-photo-1181243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Software development team working",
+    features: [
+      {
+        title: "Custom Software Development",
+        description: "Tailored solutions for your business",
+        icon: "code",
+        color: "blue"
+      },
+      {
+        title: "Enterprise Solutions",
+        description: "Scalable enterprise applications",
+        icon: "building",
+        color: "green"
+      }
+    ]
+  },
+  webDev: {
+    title: "Web Development",
+    subtitle: "About Our Web Development",
+    description: "Professional web development services using cutting-edge technologies",
+    additionalDescription: "We create modern, responsive, and user-friendly websites and web applications that help businesses establish a strong online presence. Our web solutions are optimized for performance, security, and user experience.",
+    image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Web development process",
+    features: [
+      {
+        title: "Website Design & Development",
+        description: "Modern and responsive websites",
+        icon: "globe",
+        color: "blue"
+      },
+      {
+        title: "E-commerce Solutions",
+        description: "Powerful online stores",
+        icon: "shopping-cart",
+        color: "green"
+      }
+    ]
+  },
+  mobileDev: {
+    title: "Mobile App Development",
+    subtitle: "About Our Mobile Development",
+    description: "Native and cross-platform mobile applications services",
+    additionalDescription: "We develop high-performance mobile applications that provide seamless user experiences across all devices. Our mobile solutions are designed to meet your business needs while ensuring optimal performance and user engagement.",
+    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Mobile app development",
+    features: [
+      {
+        title: "Native App Development",
+        description: "Platform-specific applications",
+        icon: "smartphone",
+        color: "blue"
+      },
+      {
+        title: "Cross-platform Development",
+        description: "Multi-platform solutions",
+        icon: "layers",
+        color: "green"
+      }
+    ]
+  },
+  aiML: {
+    title: "AI & Machine Learning",
+    subtitle: "About Our AI Solutions",
+    description: "Intelligent solutions powered by advanced AI",
+    additionalDescription: "We leverage cutting-edge AI and machine learning technologies to create intelligent solutions that automate processes, enhance decision-making, and drive business innovation. Our AI solutions are tailored to your specific business needs.",
+    image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "AI and machine learning",
+    features: [
+      {
+        title: "AI-powered Chatbots",
+        description: "Intelligent customer service",
+        icon: "message-circle",
+        color: "blue"
+      },
+      {
+        title: "Machine Learning Models",
+        description: "Advanced data analysis",
+        icon: "brain",
+        color: "green"
+      }
+    ]
+  },
+  cloud: {
+    title: "Cloud Services",
+    subtitle: "About Our Cloud Solutions",
+    description: "Comprehensive cloud solutions and consulting",
+    additionalDescription: "We provide end-to-end cloud services that help businesses migrate to and optimize their cloud infrastructure. Our cloud solutions ensure scalability, security, and cost-effectiveness for your business operations.",
+    image: "https://images.pexels.com/photos/1181678/pexels-photo-1181678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageAlt: "Cloud services",
+    features: [
+      {
+        title: "Cloud Migration",
+        description: "Seamless cloud transition",
+        icon: "cloud",
+        color: "blue"
+      },
+      {
+        title: "DevOps Services",
+        description: "Automated deployment",
+        icon: "code",
+        color: "green"
+      }
+    ]
+  }
+};

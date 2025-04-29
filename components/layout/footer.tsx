@@ -58,6 +58,12 @@ export function Footer() {
                 Blog
               </Link>
             </li>
+            <li>
+              <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                Contact Us
+              </Link>
+            </li>
+          
           </ul>
         </div>
 
@@ -72,6 +78,16 @@ export function Footer() {
             <li>
               <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
                 Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
+                Careers
+              </Link>
+            </li>
+            <li>
+              <Link href="/faq" className="text-muted-foreground hover:text-foreground transition-colors">
+                FAQ
               </Link>
             </li>
             

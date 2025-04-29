@@ -64,11 +64,11 @@ export function Navbar() {
                     {link.label}
                   </Link></NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-4 lg:w-[1000px]">
+                      <ul className="grid grid-cols-6 md:grid-cols-2 lg:grid-cols-3 w-[400px] gap-3 p-4 md:w-[700px] lg:w-[800px]">
                         {link.submenu.map((subItem) => (
                           <li key={subItem.href}>
                             <NavigationMenuLink asChild>
-                              <Link href={subItem.href} className="block select-none rounded-lg bg-background/50 px-4 transition-colors hover:bg-accent/10 focus:bg-accent/20">
+                              <Link href={subItem.href} className="block select-none rounded-lg bg-background/50 px-4 py-3 transition-colors hover:bg-accent/10 focus:bg-accent/20">
                                 <div className="space-y-1">
                                   <h4 className="text-sm font-semibold">{subItem.label}</h4>
                                  
@@ -110,7 +110,9 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
+          <Button 
+          onClick={() => router.push("/contact")}
+          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
             Contact Us
           </Button>
         </div>
@@ -146,23 +148,34 @@ export function Navbar() {
               </summary>
               <div className="pl-4 mt-2 space-y-2">
                 {link.submenu.map((subItem) => (
-                  <Link
-                    key={subItem.href}
-                    href={subItem.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block rounded-md px-3 py-2 bg-background/70 hover:bg-accent/20 text-sm font-medium transition-colors"
-                  >
-                    <div>
+                  <div key={subItem.href}>
+                    <Link
+                      href={subItem.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block rounded-md px-3 py-2 bg-background/70 hover:bg-accent/20 text-sm font-medium transition-colors"
+                    >
                       {subItem.label}
-                      {subItem.services && (
-                        <ul className="mt-1 ml-4 list-disc space-y-1 text-xs text-muted-foreground">
-                          {subItem.services.map((svc) => (
-                            <li key={svc}>{svc}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  </Link>
+                    </Link>
+                    {subItem.services && (
+                      <ul className="mt-1 ml-4 space-y-1 text-xs text-muted-foreground">
+                        {subItem.services.map((svc) => {
+                          const slug = svc.toLowerCase().replace(/\s+/g, "-");
+                          const url = `${subItem.href}/${slug}`;
+                          return (
+                            <li key={svc} className="list-disc list-inside">
+                              <Link
+                                href={url}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="hover:text-primary"
+                              >
+                                {svc}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
                 ))}
               </div>
             </details>
@@ -179,7 +192,9 @@ export function Navbar() {
       ))}
 
       {/* CTA Button */}
-      <Button className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
+      <Button 
+      onClick={() => router.push("/contact")}
+      className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-medium">
         Contact Us
       </Button>
     </nav>
