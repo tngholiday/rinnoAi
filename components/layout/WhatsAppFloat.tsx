@@ -8,7 +8,7 @@ export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  const phoneNumber = "YOUR_PHONE_NUMBER"; // Example: "1234567890"
+  const phoneNumber = "9887939268"; // Example: "1234567890"
 
   const handleSend = () => {
     const encodedMessage = encodeURIComponent(message);

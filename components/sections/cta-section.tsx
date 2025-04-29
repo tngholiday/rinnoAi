@@ -39,7 +39,7 @@ export function CtaSection() {
               <Button size="lg" className="bg-white text-blue-600 hover:bg-white/90 font-medium">
                 Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-black border-black hover:bg-white/10">
                 View Our Work
               </Button>
             </div>
