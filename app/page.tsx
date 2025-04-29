@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CtaSection } from "@/components/sections/cta-section";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiTypescript, SiPostgresql, SiDocker, SiGraphql } from "react-icons/si";
 import Contact from "@/components/servicesections/Contact";
+import WorkWithUs from "@/components/servicesections/WorkWithUs";
 export default function Home() {
 
   const techIcons = [
@@ -48,6 +49,7 @@ export default function Home() {
       </div>
     </section>
       <TeamSection />
+      <WorkWithUs/>
       <TestimonialsSection />
       <CtaSection />
       <Contact />

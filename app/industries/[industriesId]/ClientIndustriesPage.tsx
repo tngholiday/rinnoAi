@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, Icon, Puzzle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import WorkWithUs from "@/components/servicesections/WorkWithUs";
 
 export default function IndustriesPage({ industries }: { industries: any }) {
   const FallbackIcon = () => <Puzzle className="w-6 h-6" />;
@@ -128,61 +129,7 @@ export default function IndustriesPage({ industries }: { industries: any }) {
 </section>
 
 
-<section className="py-20 bg-gradient-to-br from-white via-slate-50 to-blue-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
-  <div className="container max-w-6xl mx-auto px-6 text-center">
-    <h2 className="text-4xl font-extrabold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
-      Trusted by Industry Leaders
-    </h2>
-    <div className="flex flex-wrap justify-center items-center gap-8">
-      {/* Replace these with actual logos/images */}
-      {["https://mir-s3-cdn-cf.behance.net/projects/404/935db3219049933.Y3JvcCwyNTE3LDE5NjgsNDkyLDA.jpg", "https://thumbs.dreamstime.com/b/law-building-justice-logo-design-illustration-law-building-justice-logo-design-illustration-143092173.jpg", "https://i.pinimg.com/736x/1c/75/2d/1c752dff2a9146ad762eedc2d4836b00.jpg", "https://static.vecteezy.com/system/resources/thumbnails/003/808/376/small/handshake-heart-symbol-icon-for-web-presentation-logo-infographic-business-idea-inspiration-feed-story-partnership-client-free-vector.jpg"].map((logo, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1, duration: 0.4 }}
-          className="h-16 w-36 bg-white dark:bg-zinc-800 rounded-xl shadow-md p-2 flex items-center justify-center hover:shadow-xl transition"
-        >
-          <img
-            src={logo}
-            alt={`Client logo ${index + 1}`}
-            className="h-10 object-contain grayscale hover:grayscale-0 transition"
-          />
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Optional Testimonials */}
-    <div className="mt-16 grid md:grid-cols-2 gap-8 text-left">
-      {[
-        {
-          quote: "Their platform transformed our operations. Extremely reliable and scalable.",
-          name: "Samantha Lee",
-          role: "CTO, HealthSync",
-        },
-        {
-          quote: "Our team saved 40% in dev time thanks to their flexible architecture.",
-          name: "Michael Chen",
-          role: "Head of Engineering, LogiTech",
-        },
-      ].map((testimonial, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.2, duration: 0.5 }}
-          className="bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-md border dark:border-white/10"
-        >
-          <p className="text-muted-foreground italic mb-4">“{testimonial.quote}”</p>
-          <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
-          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+<WorkWithUs/>  
 
 
 <section className="py-20 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-zinc-900 dark:to-zinc-800">
